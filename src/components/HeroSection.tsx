@@ -161,7 +161,7 @@ export default function HeroSection({
                         {isStrikethrough ? (
                           <span className="relative">
                             <span className="text-[#6FE3B1]">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[5px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-[2px] md:h-[5px] bg-[#1C1C1C]" />
                           </span>
                         ) : isHighlighted ? (
                           <span className="relative">
@@ -172,7 +172,7 @@ export default function HeroSection({
                         ) : isStrikethroughNormal ? (
                           <span className="relative">
                             <span className="text-white">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[5px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-[2px] md:h-[5px] bg-[#1C1C1C]" />
                           </span>
                         ) : (
                           word
