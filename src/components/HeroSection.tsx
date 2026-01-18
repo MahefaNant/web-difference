@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  ArrowRight,
-  Sparkles,
-  Zap,
-  Check,
-  Play,
-  Star,
-  Award,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -71,11 +62,11 @@ export default function HeroSection({
       {/* Subtle Radial Glow Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large background glow */}
-        <div className="absolute -top-1/2 -left-1/4 h-[800px] w-[800px] animate-pulse rounded-full bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
-        <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] animate-pulse rounded-full bg-gradient-to-tr from-pink-500/10 via-orange-500/10 to-transparent blur-3xl" />
+        <div className="absolute -top-1/2 -left-1/4 h-200 w-200 animate-pulse rounded-full bg-linear-to-br from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
+        <div className="absolute -bottom-1/4 -right-1/4 h-150 w-150 animate-pulse rounded-full bg-linear-to-tr from-pink-500/10 via-orange-500/10 to-transparent blur-3xl" />
 
         {/* Decorative grid pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.02)_1px,_transparent_1px)] bg-[length:40px_40px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[40px_40px]" />
       </div>
 
       {/* Main content container */}
@@ -92,10 +83,10 @@ export default function HeroSection({
             <div className="absolute -inset-1 rounded-full bg-[#6FE3B1]/40 blur-sm transition-all duration-500 group-hover:blur-md" />
 
             {/* Main badge */}
-            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-gradient-to-r from-white to-gray-50 px-4 py-2 sm:px-12 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
+            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-linear-to-r from-white to-gray-50 px-4 py-2 sm:px-12 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
               {/* Image */}
               <div className="relative">
-                <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-gradient-to-r from-blue-400/40 to-purple-400/40 blur-md" />
+                <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-linear-to-r from-blue-400/40 to-purple-400/40 blur-md" />
                 <div className="relative flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center">
                   {badge.imageSrc ? (
                     <div className="relative h-10 w-10 sm:h-14 sm:w-14 flex items-center justify-center">
@@ -135,7 +126,7 @@ export default function HeroSection({
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight space-y-2 lg:space-y-4">
             {titleLines.map((line, lineIndex) => (
               <div key={lineIndex} className="relative">
-                <span className="block bg-gradient-to-br from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
+                <span className="block bg-linear-to-br from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
                   {line.split(" ").map((word, wordIndex) => {
                     const fullWord = line.split(" ")[wordIndex];
                     const isHighlighted = highlightedWords.some((hw) =>
@@ -160,18 +151,18 @@ export default function HeroSection({
                         {isStrikethrough ? (
                           <span className="relative">
                             <span className="text-[#6FE3B1]">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[2px] md:h-[5px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-0.5 md:h-1.25 bg-[#1C1C1C]" />
                           </span>
                         ) : isHighlighted ? (
                           <span className="relative">
-                            <span className="bg-gradient-to-r text-[#6FE3B1]">
+                            <span className="bg-linear-to-r text-[#6FE3B1]">
                               {word}
                             </span>
                           </span>
                         ) : isStrikethroughNormal ? (
                           <span className="relative">
                             <span className="text-white">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[2px] md:h-[5px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-0.5 md:h-1.25 bg-[#1C1C1C]" />
                           </span>
                         ) : (
                           word
@@ -188,15 +179,15 @@ export default function HeroSection({
         {/* Decorative Element - Floating */}
         <div className="absolute left-10 top-1/3 hidden lg:block opacity-30">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-lg" />
-            <div className="relative h-32 w-32 rounded-full border border-white/10 bg-gradient-to-br from-blue-500/5 to-purple-500/5" />
+            <div className="absolute -inset-4 rounded-full bg-linear-to-r from-blue-500/10 to-purple-500/10 blur-lg" />
+            <div className="relative h-32 w-32 rounded-full border border-white/10 bg-linear-to-br from-blue-500/5 to-purple-500/5" />
           </div>
         </div>
 
         <div className="absolute right-10 top-1/2 hidden lg:block opacity-30">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-pink-500/10 to-orange-500/10 blur-lg" />
-            <div className="relative h-24 w-24 rounded-full border border-white/10 bg-gradient-to-br from-pink-500/5 to-orange-500/5" />
+            <div className="absolute -inset-4 rounded-full bg-linear-to-r from-pink-500/10 to-orange-500/10 blur-lg" />
+            <div className="relative h-24 w-24 rounded-full border border-white/10 bg-linear-to-br from-pink-500/5 to-orange-500/5" />
           </div>
         </div>
 
@@ -237,7 +228,7 @@ export default function HeroSection({
               </div>
 
               {/* Animated gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/10 to-pink-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-linear-to-r from-blue-500/0 via-white/10 to-pink-500/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </a>
           </Button>
 
@@ -253,7 +244,7 @@ export default function HeroSection({
           <Button
             size="lg"
             variant="outline"
-            className="h-16 group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] text-xl hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white transition-all duration-300"
+            className="h-16 group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white transition-all duration-300"
             asChild
           >
             <a href={secondaryCTA.href} className="flex items-center gap-2">
@@ -268,13 +259,13 @@ export default function HeroSection({
 
       {/* Additional Radial Glow Layers */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-96 w-[800px] rounded-full bg-gradient-to-t from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-96 w-200 rounded-full bg-linear-to-t from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <div className="animate-bounce">
-          <div className="h-8 w-px bg-gradient-to-b from-blue-400 via-purple-400 to-transparent" />
+          <div className="h-8 w-px bg-linear-to-b from-blue-400 via-purple-400 to-transparent" />
         </div>
       </div>
 
