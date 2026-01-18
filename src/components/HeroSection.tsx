@@ -83,23 +83,22 @@ export default function HeroSection({
         {/* Premium Badge with Image */}
         <div
           className={cn(
-            "flex justify-center mb-12 lg:mb-16 transition-all duration-700",
+            "flex justify-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700",
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
         >
-          <div className="relative group">
+          <div className="relative group max-w-full px-4">
             {/* Glow effect */}
-            <div className="absolute -inset-1 rounded-full bg-[#6FE3B1] blur-sm group-hover:blur-sm transition-all duration-500" />
+            <div className="absolute -inset-1 rounded-full bg-[#6FE3B1] blur-sm transition-all duration-500 group-hover:blur-md" />
 
             {/* Main badge */}
-            <div className="relative flex items-center gap-3 rounded-full bg-gradient-to-r  from-white to-gray-50 px-6 py-3 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
-              {/* Image with glow */}
+            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-gradient-to-r from-white to-gray-50 px-4 py-2 sm:px-6 sm:py-3 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
+              {/* Image */}
               <div className="relative">
-                <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-400/40 to-purple-400/40 blur-md" />
-                <div className="relative flex h-10 w-10 items-center justify-center py-8">
-                  {/* Fallback icon if no image */}
+                <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-gradient-to-r from-blue-400/40 to-purple-400/40 blur-md" />
+                <div className="relative flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center">
                   {badge.imageSrc ? (
-                    <div className="relative h-14 w-14 justify-center items-center flex">
+                    <div className="relative h-10 w-10 sm:h-14 sm:w-14 flex items-center justify-center">
                       <div className="absolute inset-0 rounded-full bg-white/20" />
                       <Image
                         src={badge.imageSrc}
@@ -110,14 +109,14 @@ export default function HeroSection({
                       />
                     </div>
                   ) : (
-                    <Award className="h-5 w-5 text-white" />
+                    <Award className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   )}
                 </div>
               </div>
 
               {/* Text */}
-              <div className="flex flex-col">
-                <span className="text-3xl font-extrabold tracking-tight text-gray-900">
+              <div className="flex flex-col text-center sm:text-left">
+                <span className="text-md sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-gray-900 leading-tight">
                   CRÉE UN SITE WEB <span className="underline">VRAIMENT</span>{" "}
                   UNIQUE
                 </span>
