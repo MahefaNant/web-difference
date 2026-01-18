@@ -89,10 +89,10 @@ export default function HeroSection({
         >
           <div className="relative group max-w-full">
             {/* Glow effect */}
-            <div className="absolute -inset-1 rounded-full bg-[#6FE3B1] blur-sm transition-all duration-500 group-hover:blur-md" />
+            <div className="absolute -inset-1 rounded-full bg-[#6FE3B1]/40 blur-sm transition-all duration-500 group-hover:blur-md" />
 
             {/* Main badge */}
-            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-gradient-to-r from-white to-gray-50 px-4 py-2 sm:px-6 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
+            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-gradient-to-r from-white to-gray-50 px-4 py-2 sm:px-12 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
               {/* Image */}
               <div className="relative">
                 <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-gradient-to-r from-blue-400/40 to-purple-400/40 blur-md" />
