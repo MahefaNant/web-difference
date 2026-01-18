@@ -3,7 +3,7 @@
 import { ArrowRight, Sparkles, Zap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface HeroProps {
@@ -52,21 +52,23 @@ export default function HeroSection({
   },
 }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isPrimaryHovered, setIsPrimaryHovered] = useState(false);
+  const primaryButtonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden ">
+    <section className="relative min-h-screen w-full overflow-hidden">
       {/* Subtle Radial Glow Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large background glow */}
-        <div className="absolute -top-1/2 -left-1/4 h-200 w-200 animate-pulse rounded-full bg-linear-to-br from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
-        <div className="absolute -bottom-1/4 -right-1/4 h-150 w-150 animate-pulse rounded-full bg-linear-to-tr from-pink-500/10 via-orange-500/10 to-transparent blur-3xl" />
+        <div className="absolute -top-1/2 -left-1/4 h-200 w-200 animate-pulse rounded-full bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
+        <div className="absolute -bottom-1/4 -right-1/4 h-150 w-150 animate-pulse rounded-full bg-gradient-to-tr from-pink-500/10 via-orange-500/10 to-transparent blur-3xl" />
 
         {/* Decorative grid pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[40px_40px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:40px_40px]" />
       </div>
 
       {/* Main content container */}
@@ -83,10 +85,10 @@ export default function HeroSection({
             <div className="absolute -inset-1 rounded-full bg-[#6FE3B1]/40 blur-sm transition-all duration-500 group-hover:blur-md" />
 
             {/* Main badge */}
-            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-linear-to-r from-white to-gray-50 px-4 py-2 sm:px-12 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
+            <div className="relative flex items-center gap-3 sm:gap-4 rounded-full bg-gradient-to-r from-white to-gray-50 px-4 py-2 sm:px-12 sm:py-7 shadow-2xl shadow-blue-500/10 border border-white/50 backdrop-blur-sm">
               {/* Image */}
               <div className="relative">
-                <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-linear-to-r from-blue-400/40 to-purple-400/40 blur-md" />
+                <div className="absolute -inset-1 sm:-inset-2 rounded-full bg-gradient-to-r from-blue-400/40 to-purple-400/40 blur-md" />
                 <div className="relative flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center">
                   {badge.imageSrc ? (
                     <div className="relative h-10 w-10 sm:h-14 sm:w-14 flex items-center justify-center">
@@ -126,7 +128,7 @@ export default function HeroSection({
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight space-y-2 lg:space-y-4">
             {titleLines.map((line, lineIndex) => (
               <div key={lineIndex} className="relative">
-                <span className="block bg-linear-to-br from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-br from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
                   {line.split(" ").map((word, wordIndex) => {
                     const fullWord = line.split(" ")[wordIndex];
                     const isHighlighted = highlightedWords.some((hw) =>
@@ -155,7 +157,7 @@ export default function HeroSection({
                           </span>
                         ) : isHighlighted ? (
                           <span className="relative">
-                            <span className="bg-linear-to-r text-[#6FE3B1]">
+                            <span className="bg-gradient-to-r text-[#6FE3B1]">
                               {word}
                             </span>
                           </span>
@@ -179,15 +181,15 @@ export default function HeroSection({
         {/* Decorative Element - Floating */}
         <div className="absolute left-10 top-1/3 hidden lg:block opacity-30">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-linear-to-r from-blue-500/10 to-purple-500/10 blur-lg" />
-            <div className="relative h-32 w-32 rounded-full border border-white/10 bg-linear-to-br from-blue-500/5 to-purple-500/5" />
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-lg" />
+            <div className="relative h-32 w-32 rounded-full border border-white/10 bg-gradient-to-br from-blue-500/5 to-purple-500/5" />
           </div>
         </div>
 
         <div className="absolute right-10 top-1/2 hidden lg:block opacity-30">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-linear-to-r from-pink-500/10 to-orange-500/10 blur-lg" />
-            <div className="relative h-24 w-24 rounded-full border border-white/10 bg-linear-to-br from-pink-500/5 to-orange-500/5" />
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-pink-500/10 to-orange-500/10 blur-lg" />
+            <div className="relative h-24 w-24 rounded-full border border-white/10 bg-gradient-to-br from-pink-500/5 to-orange-500/5" />
           </div>
         </div>
 
@@ -210,48 +212,69 @@ export default function HeroSection({
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
         >
-          {/* Primary CTA Button */}
-          <Button
-            size="lg"
-            className="h-16 group relative overflow-hidden bg-[#6FE3B1] text-black  hover:shadow-2xl hover:shadow-blue-500/30 px-8 py-7 text-lg font-semibold rounded-xl border-0 transition-all duration-300 hover:scale-105"
-            asChild
+          {/* Primary CTA Button avec wrapper pour le zoom */}
+          <div
+            ref={primaryButtonRef}
+            className={cn(
+              "relative transition-transform duration-300",
+              isPrimaryHovered && "scale-105",
+            )}
+            onMouseEnter={() => setIsPrimaryHovered(true)}
+            onMouseLeave={() => setIsPrimaryHovered(false)}
           >
-            <a href={primaryCTA.href}>
-              <div className="flex items-center gap-3">
-                <div className="relative">
-                  <div className="font-extrabold absolute -inset-2 rounded-full bg-white/20 blur-sm group-hover:blur-md transition-all duration-300" />
-                  {primaryCTA.icon || <Zap className="h-12 w-12" />}
+            <Button
+              size="lg"
+              className="h-16 group relative overflow-hidden bg-[#6FE3B1] text-black hover:shadow-2xl hover:shadow-blue-500/30 px-8 py-7 text-lg font-semibold rounded-xl border-0"
+              asChild
+            >
+              <a href={primaryCTA.href}>
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <div className="font-extrabold absolute -inset-2 rounded-full bg-white/20 blur-sm group-hover:blur-md transition-all duration-300" />
+                    {primaryCTA.icon || <Zap className="h-12 w-12" />}
+                  </div>
+                  <span className="relative z-10 font-extrabold text-2xl">
+                    {primaryCTA.text}
+                  </span>
                 </div>
-                <span className="relative z-10 font-extrabold text-2xl">
-                  {primaryCTA.text}
-                </span>
-              </div>
 
-              {/* Animated gradient overlay */}
-              <div className="absolute inset-0 bg-linear-to-r from-blue-500/0 via-white/10 to-pink-500/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            </a>
-          </Button>
+                {/* Animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/10 to-pink-500/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </a>
+            </Button>
+          </div>
 
-          <Image
-            src="/Un_Ptit_Click.png"
-            alt="Un Ptit Click"
-            width={170}
-            height={170}
-            className="hidden sm:block absolute left-70 top-12"
-          />
+          {/* Image Un Ptit Click - Pointe vers le premier bouton et visible seulement sur desktop */}
+          {/* Image Un Ptit Click - Visible seulement sur desktop et pointant vers le premier bouton */}
+          <div className="hidden xl:block absolute left-98 top-11 -translate-x-1/2 pointer-events-none">
+            <div className="relative">
+              <Image
+                src="/Un_Ptit_Click.png"
+                alt="Un Ptit Click"
+                width={180}
+                height={180}
+                className="relative drop-shadow-lg animate-pulse"
+                style={{
+                  transformOrigin: "bottom center",
+                }}
+              />
+            </div>
+          </div>
 
-          {/* Secondary CTA Button */}
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-16 group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white transition-all duration-300"
-            asChild
-          >
-            <a href={secondaryCTA.href} className="flex items-center gap-2">
-              <span>{secondaryCTA.text}</span>
-              <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-1" />
-            </a>
-          </Button>
+          {/* Secondary CTA Button avec wrapper pour le zoom */}
+          <div className="relative transition-transform duration-300 hover:scale-105">
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-16 group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white"
+              asChild
+            >
+              <a href={secondaryCTA.href} className="flex items-center gap-2">
+                <span>{secondaryCTA.text}</span>
+                <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Trust Indicators */}
@@ -259,13 +282,13 @@ export default function HeroSection({
 
       {/* Additional Radial Glow Layers */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-96 w-200 rounded-full bg-linear-to-t from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-96 w-200 rounded-full bg-gradient-to-t from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <div className="animate-bounce">
-          <div className="h-8 w-px bg-linear-to-b from-blue-400 via-purple-400 to-transparent" />
+          <div className="h-8 w-px bg-gradient-to-b from-blue-400 via-purple-400 to-transparent" />
         </div>
       </div>
 
@@ -294,6 +317,16 @@ export default function HeroSection({
         }
         .animate-float-slow {
           animation: float 6s ease-in-out infinite;
+        }
+
+        /* Force le scaling même sur mobile avec touch */
+        @media (hover: hover) and (pointer: fine) {
+          .hover-scale-mobile {
+            transition: transform 0.3s ease;
+          }
+          .hover-scale-mobile:hover {
+            transform: scale(1.05);
+          }
         }
       `}</style>
     </section>
