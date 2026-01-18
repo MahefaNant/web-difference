@@ -1,12 +1,12 @@
 import HeroSection from "@/components/HeroSection";
-import { Rocket } from "lucide-react";
-import Image from "next/image";
+import { NavBar } from "@/components/Navbar";
 import { FaCalendarAlt } from "react-icons/fa";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-[#1C1C1C]">
+        <NavBar />
         <HeroSection
           badge={{
             text: "CRÉE UN SITE WEB VRAIMENT UNIQUE",
