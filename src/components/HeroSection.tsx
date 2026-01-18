@@ -117,8 +117,9 @@ export default function HeroSection({
 
               {/* Text */}
               <div className="flex flex-col">
-                <span className="text-3xl font-bold tracking-tight text-gray-900">
-                  {badge.text}
+                <span className="text-3xl font-extrabold tracking-tight text-gray-900">
+                  CRÉE UN SITE WEB <span className="underline">VRAIMENT</span>{" "}
+                  UNIQUE
                 </span>
               </div>
             </div>
@@ -160,7 +161,7 @@ export default function HeroSection({
                         {isStrikethrough ? (
                           <span className="relative">
                             <span className="text-[#6FE3B1]">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[2px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-[5px] bg-[#1C1C1C]" />
                           </span>
                         ) : isHighlighted ? (
                           <span className="relative">
@@ -171,7 +172,7 @@ export default function HeroSection({
                         ) : isStrikethroughNormal ? (
                           <span className="relative">
                             <span className="text-white">{word}</span>
-                            <span className="absolute top-1/2 left-0 right-0 h-[2px] bg-[#1C1C1C]" />
+                            <span className="absolute top-1/2 left-0 right-0 h-[5px] bg-[#1C1C1C]" />
                           </span>
                         ) : (
                           word
