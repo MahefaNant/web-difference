@@ -222,7 +222,7 @@ export default function HeroSection({
           {/* Primary CTA Button */}
           <Button
             size="lg"
-            className="group relative overflow-hidden bg-[#6FE3B1] text-black  hover:shadow-2xl hover:shadow-blue-500/30 px-8 py-7 text-lg font-semibold rounded-xl border-0 transition-all duration-300 hover:scale-105"
+            className="h-16 group relative overflow-hidden bg-[#6FE3B1] text-black  hover:shadow-2xl hover:shadow-blue-500/30 px-8 py-7 text-lg font-semibold rounded-xl border-0 transition-all duration-300 hover:scale-105"
             asChild
           >
             <a href={primaryCTA.href}>
@@ -253,7 +253,7 @@ export default function HeroSection({
           <Button
             size="lg"
             variant="outline"
-            className="group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] text-xl hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white transition-all duration-300"
+            className="h-16 group px-8 py-7 text-lg font-semibold rounded-xl border-2 border-[#6FE3B1] bg-transparent text-[#6FE3B1] text-xl hover:bg-blue-500/10 hover:border-blue-400/50 hover:text-white transition-all duration-300"
             asChild
           >
             <a href={secondaryCTA.href} className="flex items-center gap-2">
